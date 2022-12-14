@@ -1,0 +1,19 @@
+body {
+    background-color: bisque;
+
+}
+.listaclientes {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: auto auto auto auto;
+}
+.listaproductos {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: auto auto auto ;
+}
+.listaproveedores {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: auto auto auto auto;
+}

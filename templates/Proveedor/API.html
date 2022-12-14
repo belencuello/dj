@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<ul>
+    
+    {% for proveedor in proveedores  %}
+    <p>---------------------------------</p>
+    <li>{{proveedor.rubro}}</li>
+    <li>{{proveedor.nombre}}</li>
+    <p>---------------------------------</p>        
+    {% endfor %}
+        
+</ul>
+    
+{% endblock content %}

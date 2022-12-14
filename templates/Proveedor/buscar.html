@@ -1,0 +1,21 @@
+{% block content %}
+
+<form method="GET">
+    <input type="text" placerholder = 'Nombres' id = "kword" name="kword">
+    <input type="button" value="Buscar">
+
+</form>
+
+<p>Lista de Proveedores</p>
+
+<ul>
+    
+    {% for proveedor in proveedores  %}
+    <li>{{proveedor.nombre}},{{proveedor.rubro}}</li>
+        
+    {% endfor %}
+<ul>
+ 
+   
+    
+{% endblock content %}
