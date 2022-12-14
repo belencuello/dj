@@ -18,35 +18,35 @@ from django.urls import reverse_lazy
 class Producto(TemplateView):
     template_name = "inicio2.html"
 
-#CONSULTA QUE Nos devuelve todos los objetos del tipo clientes de la BD
+#CONSULTA QUE Nos devuelve todos los objetos del tipo producto de la BD
 class ProductoListView(ListView):#esta vista hace una consulta a la BS y devuelve todos los objetos
     model: Producto
     template_name = "producto/lista.html"
-    ordering = "marcaProd"
+    ordering = "nombre"
     paginate_by: 3
     context_object_name = "productos"
     def get_queryset(self):
         palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
         #lista que muestra
         lista = Producto.objects.filter(
-            marcaProd__icontains = palabra_clave
-            )#los objetos del modelo cliente los voy a filtar con algun criterio
+            nombre__icontains = palabra_clave
+            )#los objetos del modelo producto los voy a filtar con algun criterio
         return lista
 
 class BuscarProductoListView(ListView):
     model = Producto
     template_name = "producto/buscar.html"
-    ordering = "marcaProd"
+    ordering = "nombre"
     context_object_name = "productos"
 
 #para realizar una consulta segun criterio de busqueda usamos metodo get queryset
-def get_queryset(self):
-    palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
     #lista que muestra
-    lista = Producto.objects.filter(
-        marcaProd__icontains = palabra_clave
-    )#los objetos del modelo producto los voy a filtar con algun criterio
-    return lista
+        lista = Producto.objects.filter(
+            nombre__icontains = palabra_clave
+            )#los objetos del modelo producto los voy a filtar con algun criterio
+        return lista
 
 
 class ProductoDetailView(DetailView):
@@ -72,7 +72,7 @@ class ProductoUpdateView(UpdateView):
     model = Producto
     template_name = "producto/update.html"
     form_class = ProductoForm
-    success_url = reverse_lazy('proucto_app:Lista de Productos')
+    success_url = reverse_lazy('producto_app:Lista de Productos')
 
 """    def form_valid(self, form):
         emp = form.save(commit=False)#guarda en esta variable pero no en la BD

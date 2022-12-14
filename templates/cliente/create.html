@@ -3,8 +3,8 @@
 
 
 {% block content %}
+<h1 class="text-center display-4 font-weight-bold font-italic">Alta de Clientes</h1>
 
-<h1>'Alta de Cliente'</h1>
 
 <form method="POST" enctype="multipart/form-data ">{% csrf_token %} 
     {{form.as_p}}<!--as.p = acomoda un campo debajo de otro en el formulario-->

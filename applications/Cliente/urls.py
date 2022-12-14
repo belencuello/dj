@@ -9,7 +9,11 @@ urlpatterns = [
         views.ClienteListView.as_view(),
         name='Lista de Clientes'
     ),
-
+    path(
+        'cliente/buscar/',
+        views.BuscarClienteListView.as_view(),
+        name='Buscar Proveedores'
+    ),
    
 
     path(

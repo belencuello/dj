@@ -7,22 +7,24 @@
 
 <div class = "listaproductos"></div>
      <h2><strong>Id</strong></h2>
+     <h2><strong>Nombre</strong></h2>
      <h2><strong>Tipo</strong></h2>
      <h2><strong>Marcas</strong></h2>
      <h2><strong>habilidades</strong></h2>
 
      {% for producto in productos  %}
-     <p>{{producto.id}}</p>
-     <p>{{producto.tipo}}</p>
-     <p>{{producto.marcasProd}}</p>
-     <p>
-        <a href="{% url 'producto_app:Detalle del producto' producto.id%}">Ver-</a>
-        <a href="{% url 'producto_app:Modificar producto' producto.id%}">Modificar-</a>
-        <a href="{% url 'producto_app:Baja de producto' producto.id%}">Eliminar</a>
+          <p>{{producto.identificador}}</p>
+          <p>{{producto.nombre}}</p>
+          <p>{{producto.tipo}}</p>
+          <p>{{producto.marcaProd}}</p>
+          <p>
+             <a href="{% url 'producto_app:Detalle del producto' producto.identificador%}">Ver-</a>
+             <a href="{% url 'producto_app:Modificar producto' producto.identificador%}">Modificar-</a>
+             <a href="{% url 'producto_app:Baja de producto' producto.identificador%}">Eliminar</a>
 
-     </p> 
+          </p> 
      {% endfor %}
-
+</div>
 <div>
  
 {% if is_paginated %}
@@ -33,16 +35,17 @@
        {%for pagina in paginator.page_range %}
          {% ifequal pagina pge_obj.number  %}
               {{ pagina }} 
-      {% else %}
+         {% else %}
              <a href="?page={{pagina}}">{{ pagina }}</a>></a></li>
       
          {% endifequal %}
-      {% endfor %}
+       {% endfor %}
 
-      {% if page_obj.has_next %}
+       {% if page_obj.has_next %}
            <a href="?page={{page_obj.next_page_next}}">Siguiente</a>></a>
-      {% endif %}
+       {% endif %}
 
 {% endif %}
 
 </div>
+{% endblock content %}

@@ -7,7 +7,7 @@
 
 <div class="alert alert-warning">
     <div clas="row m-7 justify-content-center align-items-center">
-        <strong>¡Advertencia!</strong> 
+        <strong>¡Cuidado!</strong> 
         <br>
         Usted esta a punto de borrar un proveedor.
     </div>
@@ -21,10 +21,10 @@
     <form method="POST">{% csrf_token %}    <!-- Permite prevenir falsificaciónes de solicitudes entre sitios.-->
                 <p>Nombre: {{delete.nombre}}</p>
                 <p>Rubro: {{delete.rubro}}</p>
-                <p>id: {{delete.id}}</p>
+                <p>id: {{delete.identificador}}</p>
                 <button class="btn btn-danger row col-10 ml-4" type="submit" value="Borrar" data-toggle="tooltip" data-placement="right" title="Borrar">BORRAR</button>
     </form>
-            
+           
     </div>
 </div> 
 {% endblock content %}

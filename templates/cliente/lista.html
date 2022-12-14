@@ -2,16 +2,17 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block content %}
 
-<h1>Lista de Clientes</h1>
+{% block content %}
+<h1 class="text-center display-4 font-weight-bold font-italic">Lista de Clientes</h1>
+
 
 <div class = "listaclientes">
      <h2><strong>Apellidos</strong></h2>
      <h2><strong>Nombres</strong></h2>
      <h2><strong>Nombre_Completo</strong></h2>
      <h2><strong>Acciones</strong></h2>
-
+     
      {% for cliente in clientes  %}
           <p>{{cliente.apellidos}}</p>
           <p>{{cliente.nombres}}</p>
@@ -32,17 +33,17 @@
        {% endif %} 
    
        {%for pagina in paginator.page_range %}
-         {% ifequal pagina pge_obj.number  %}
+            {% ifequal pagina pge_obj.number %}
               {{ pagina }} 
-      {% else %}
+            {% else %}
              <a href="?page={{pagina}}">{{ pagina }}</a>></a></li>
       
-         {% endifequal %}
-      {% endfor %}
+            {% endifequal %}
+       {% endfor %}
 
-      {% if page_obj.has_next %}
+       {% if page_obj.has_next %}
            <a href="?page={{page_obj.next_page_next}}">Siguiente</a>></a>
-      {% endif %}
+       {% endif %}
 
 {% endif %}
 

@@ -31,7 +31,7 @@ class ClienteListView(ListView):#esta vista hace una consulta a la BS y devuelve
             )#los objetos del modelo producto los voy a filtar con algun criterio
         return lista
 
-"""class BuscarClienteListView(ListView):
+class BuscarClienteListView(ListView):
     model = Cliente
     template_name = "cliente/buscar.html"
     ordering = "apellidos"
@@ -39,12 +39,12 @@ class ClienteListView(ListView):#esta vista hace una consulta a la BS y devuelve
 
 #para realizar una consulta segun criterio de busqueda usamos metodo get queryset
     def get_queryset(self):
-      palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
-    #lista que muestra
-      lista = Cliente.objects.filter(
-        apellidos__icontains = palabra_clave
+        palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
+        #lista que muestra
+        lista = Cliente.objects.filter(
+            apellidos__icontains = palabra_clave
         )#los objetos del modelo cliente los voy a filtar con algun criterio
-      return lista"""
+        return lista
 
 
 class ClienteDetailView(DetailView):

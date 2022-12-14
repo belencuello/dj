@@ -10,6 +10,7 @@ class ProductoForm(forms.ModelForm):
 
         model = Producto
         fields = ('identificador',
+                  'nombre',  
                   'tipo',
                   'marcaProd',
                   )#campos para crear a los productos
