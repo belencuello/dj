@@ -9,7 +9,7 @@ class ProductoForm(forms.ModelForm):
         """Meta definition for Productoform."""
 
         model = Producto
-        fields = ('id',
+        fields = ('identificador',
                   'tipo',
                   'marcaProd',
                   )#campos para crear a los productos

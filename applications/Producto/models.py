@@ -1,5 +1,5 @@
 from django.db import models
-
+from applications.Proveedor.models import Proveedor
 # Create your models here.
 class Marca(models.Model):
     """Model definition for Marca."""
@@ -14,15 +14,16 @@ class Marca(models.Model):
 
     def __str__(self):
         """Unicode representation of Marca."""
-        return {self.marca}
+        return f"marca {self.marca}"
 
 
 class Producto(models.Model):
     """Model definition for Producto."""
-    id = models.IntegerField(primary_key=True)
+    identificador = models.IntegerField(primary_key=True)
+    nombre = models.CharField('Nombre de producto', max_length=50)
     tipo = models.CharField("Tipo de producto", max_length=50)
-    marcaProd = models.CharField("Marca", max_length=50)
-    #models.ForeignKey(Marca, on_delete=models.CASCADE)
+    marcaProd = models.ManyToManyField(Marca)
+    proveedor=models.ForeignKey(Proveedor, on_delete=models.CASCADE)
 
     class Meta:
         """Meta definition for Producto."""
@@ -30,6 +31,6 @@ class Producto(models.Model):
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
 
-    #def __str__(self):
-     #   """Unicode representation of Producto."""
-      #  return {self.tipo}
+    def __str__(self):
+        """Unicode representation of Producto."""
+        return self.nombre

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, re_path, include
 from . import views 
-app_name = "proveedores_app"
+app_name = "proveedor_app"
 
 urlpatterns = [
     path(
@@ -17,7 +17,7 @@ urlpatterns = [
     path(
         'proveedor/detalle/<pk>/',#<pk>/ se usa para decirle que registro voy a eliminar es el id del cliente
         views.ProveedorDetailView.as_view(),
-        name='Detalle del Proveedor'
+        name='Detalle del proveedor'
     ),
     path(
         'proveedor/create/',
@@ -27,7 +27,12 @@ urlpatterns = [
     path(
         'proveedor/update/<pk>/',
         views.ProveedorUpdateView.as_view(),
-        name='Modificar Proveedor'
+        name='Modificar proveedor'
+    ),
+    path(
+        'proveedor/baja/<pk>/',
+        views.ProveedorDeleteView.as_view(),
+        name='Baja de proveedor'
     ),
         
     path(

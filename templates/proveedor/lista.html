@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 
@@ -15,9 +15,9 @@
      <p>{{proveedor.nombre}}</p>
      <p>{{proveedor.rubro}}</p>
      <p>
-        <a href="{% url 'proveedor_app:Detalle del proveedor' proveedor.id%}">Ver-</a>
-        <a href="{% url 'cproveedor_app:Modificar proveedor' proveedor.id%}">Modificar-</a>
-        <a href="{% url 'proveedor_app:Baja de proveedor' proveedor.id%}">Eliminar</a>
+        <a href="{% url 'proveedor_app:Detalle del proveedor' proveedor.identificador%}">Ver-</a>
+        <a href="{% url 'proveedor_app:Modificar proveedor' proveedor.identificador%}">Modificar-</a>
+        <a href="{% url 'proveedor_app:Baja de proveedor' proveedor.identificador%}">Eliminar</a>
 
      </p> 
      {% endfor %}
@@ -45,3 +45,4 @@
 {% endif %}
 
 </div>
+{% endblock content %}

@@ -9,7 +9,7 @@ class ProveedorForm(forms.ModelForm):
         """Meta definition for Proveedorform."""
 
         model = Proveedor
-        fields = ('id',
+        fields = ('identificador',
                   'nombre',
                   'rubro',
                   )#campos para crear a 
