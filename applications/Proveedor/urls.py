@@ -4,6 +4,11 @@ from . import views
 app_name = "proveedor_app"
 
 urlpatterns = [
+     path(   #estructura path compuesta por tres partes
+       'inicial/',   #asi termina la url (url/lista)
+       views.Inicio.as_view(), #esta es la vista que acabamos de crear en views.py	
+       name='Pagina inicial'   #nombre de la url
+    ),
     path(
         'proveedor/lista/',
         views.ProveedorListView.as_view(),

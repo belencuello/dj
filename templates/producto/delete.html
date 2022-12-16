@@ -7,9 +7,10 @@
 
 <div class="alert alert-warning">
     <div clas="row m-7 justify-content-center align-items-center">
-        <strong>¡Advertencia!</strong> 
+        <strong>¡Cuidado!</strong> 
         <br>
-        Usted esta a punto de borrar un producto
+        Con esta opcion elegida borrara el producto de la lista
+
     </div>
 </div>
 
@@ -19,7 +20,7 @@
     <div class="card" style="width: 400px;">
         <div class="card-body"> 
     <form method="POST">{% csrf_token %}    <!-- Permite prevenir falsificaciónes de solicitudes entre sitios.-->
-                <p>Id: {{delete.id}}</p>
+                <p>Id: {{delete.identificador}}</p>
                 <p>Tipo: {{delete.tipo}}</p>
                 <p>Marca: {{delete.marcaProd}}</p>
                 <button class="btn btn-danger row col-10 ml-4" type="submit" value="Borrar" data-toggle="tooltip" data-placement="right" title="Borrar">BORRAR</button>

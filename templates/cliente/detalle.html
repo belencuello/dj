@@ -1,37 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
+<h2 class="text-center display-4 font-weight-bold font-italic">Detalle del Cliente</h2>
 
-<h1>Detalle  del cliente</h1>
-
-{% if detalle.avatar %}
+<div class="row mt-3 justify-content-center ">
+    <div class="card" style="width: 400px; background-color: burlywood">
+        <div class="card-body"> 
+            <h4 class="text-center display-4 font-weight-bold font-italic">Datos</h4>
+    
+    
+    {% if detalle.avatar %}
     <img src="{{detalle.avatar.url}}" alt="">
-{% else %}
-    <img src=" {% static 'img/nada.peg' %} " alt="">
-{% endif %}
+    {% else %}
+    <img src=" {% static 'img/usuario.jpeg' %} " style=" width: 100px; border-radius: 100%; justify-content: center">
+    {% endif %}
 
 
-<h2>Datos</h2>
-
-
-<ul>
-    <li>Apellidos: {{detalle.apellidos}}</li>
-    <li>Nombres: {{detalle.nombres}}</li>
-    <li>Nombre Completo: {{detalle.nombre_completo}}</li>
-    <li>DNI: {{detalle.dni}}</li>
-   
-    <!---<h3>habilidades</h3>
-    
     <ul>
-
-
-     {% for habilidad in detalle.habilidades.all %}
-     <li> {{habilidad.nombre}} </li>
-     {% endfor %}
+        <li>Apellidos: {{detalle.apellidos}}</li>
+        <li>Nombres: {{detalle.nombres}}</li>
+        <li>Nombre Completo: {{detalle.nombre_completo}}</li>
+        <li>DNI: {{detalle.dni}}</li>
     
-    
-    </ul>  --->  
-</ul>
+    </ul>
+</form>
+            
+</div>
+</div>
 {% endblock content %}
     

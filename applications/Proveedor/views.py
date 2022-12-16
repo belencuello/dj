@@ -10,13 +10,15 @@ from django.views.generic import (
     CreateView,
     UpdateView,
     DetailView,
+    TemplateView,
 )
 
 from .models import Proveedor
 from .form import ProveedorForm
 from django.urls import reverse_lazy
 
-
+class Inicio(TemplateView):     #Esta vista hereda de TemplateView y solo nos muestra un template
+   template_name = "inicio.html"
 
 
 #CONSULTA QUE Nos devuelve todos los objetos del tipo clientes de la BD

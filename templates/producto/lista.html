@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block content %}
+<h1 class="text-center display-4 font-weight-bold font-italic">Lista de Productos</h1>
 
-<h1>Lista de Productos</h1>
 
-<div class = "listaproductos"></div>
+<div class = "listaproductos">
      <h2><strong>Id</strong></h2>
      <h2><strong>Nombre</strong></h2>
      <h2><strong>Tipo</strong></h2>
      <h2><strong>Marcas</strong></h2>
-     <h2><strong>habilidades</strong></h2>
+     <h2><strong>Habilidades</strong></h2>
 
      {% for producto in productos  %}
           <p>{{producto.identificador}}</p>
@@ -18,9 +18,9 @@
           <p>{{producto.tipo}}</p>
           <p>{{producto.marcaProd}}</p>
           <p>
-             <a href="{% url 'producto_app:Detalle del producto' producto.identificador%}">Ver-</a>
-             <a href="{% url 'producto_app:Modificar producto' producto.identificador%}">Modificar-</a>
-             <a href="{% url 'producto_app:Baja de producto' producto.identificador%}">Eliminar</a>
+             <a href="{% url 'producto_app:Detalle del Producto' producto.identificador%}">Ver-</a>
+             <a href="{% url 'producto_app:Modificar Producto' producto.identificador%}">Modificar-</a>
+             <a href="{% url 'producto_app:Baja de Producto' producto.identificador%}">Eliminar</a>
 
           </p> 
      {% endfor %}
@@ -49,3 +49,8 @@
 
 </div>
 {% endblock content %}
+
+
+
+
+

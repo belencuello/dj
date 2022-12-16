@@ -1,23 +1,22 @@
 {% block content %}
 {% load static %}
 
-<form method="GET">
-    <input type="text" placerholder = 'Apellidos' id = "kword" name="kword">
-    <input type="button" value="Buscar">
 
-</form>
+    <form method="get">
+        <input type="text" placerholder = 'Apellidos' id = "kword" name="kword">
+        <input type="button" value="Buscar">
+
+    </form>
 
 <p>Lista de Clientes</p>
 
-<ul>
+    <ul>
     
-    {% for cliente in clientes  %}
-    <li>{{cliente.nombres}},{{cliente.apellidos}}</li>
+        {% for cliente in clientes  %}
+             <li>{{cliente.nombres}},{{cliente.apellidos}}</li>
         
-    {% endfor %}
-<ul>
- 
-   
-    
+        {% endfor %}
+
+    </ul>
 {% endblock content %}
     

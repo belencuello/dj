@@ -15,8 +15,8 @@ from .models import Producto
 from .form import ProductoForm
 from django.urls import reverse_lazy
 
-class Producto(TemplateView):
-    template_name = "inicio2.html"
+class Inicio(TemplateView):     #Esta vista hereda de TemplateView y solo nos muestra un template
+   template_name = "inicio.html"
 
 #CONSULTA QUE Nos devuelve todos los objetos del tipo producto de la BD
 class ProductoListView(ListView):#esta vista hace una consulta a la BS y devuelve todos los objetos
@@ -74,11 +74,9 @@ class ProductoUpdateView(UpdateView):
     form_class = ProductoForm
     success_url = reverse_lazy('producto_app:Lista de Productos')
 
-"""    def form_valid(self, form):
-        emp = form.save(commit=False)#guarda en esta variable pero no en la BD
-        emp.nombre_completo = emp.nombres + '' + emp.apellidos#AUTOMATICAMENTE SE GENERA EL NOMBRE COMPLETO EN BASE AL APELLIDO Y NOMBRE QUE INGRESE 
-        emp.save()#guarda en la BD
-        return super(ProductoUpdateView, self).form_valid(form)"""
+    def form_valid(self, form):
+        emp = form.save()#guarda en esta variable pero no en la BD
+        return super(ProductoUpdateView, self).form_valid(form)
 
 
 

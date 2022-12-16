@@ -4,16 +4,18 @@ from . import views
 app_name = "producto_app"
 
 urlpatterns = [
-    path(
-        'producto/',
-        views.Producto.as_view(),
-        name='Pagina producto'
+    path(   #estructura path compuesta por tres partes
+       'inicial/',   #asi termina la url (url/lista)
+       views.Inicio.as_view(), #esta es la vista que acabamos de crear en views.py	
+       name='Pagina inicial'   #nombre de la url
     ),
+    
     path(
         'producto/lista/',
         views.ProductoListView.as_view(),
         name='Lista de Productos'
     ),
+    
     path(
         'producto/buscar/',
         views.BuscarProductoListView.as_view(),
@@ -34,7 +36,12 @@ urlpatterns = [
         views.ProductoUpdateView.as_view(),
         name='Modificar Producto'
     ),
-   path(
+    path(
+        'producto/baja/<pk>/',
+        views.ProductoDeleteView.as_view(),
+        name='Baja de Producto'
+    ),
+    path(
         'api/lista/',
         views.ProductoListApiView.as_view(),
         name='lista-api'

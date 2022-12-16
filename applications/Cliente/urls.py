@@ -4,15 +4,21 @@ from . import views
 app_name = "cliente_app"
 
 urlpatterns = [
+    path(   #estructura path compuesta por tres partes
+       'inicial/',   #asi termina la url (url/lista)
+       views.Inicio.as_view(), #esta es la vista que acabamos de crear en views.py	
+       name='Pagina inicial'   #nombre de la url
+    ),
     path(
         'cliente/lista/',
         views.ClienteListView.as_view(),
         name='Lista de Clientes'
     ),
+    
     path(
         'cliente/buscar/',
         views.BuscarClienteListView.as_view(),
-        name='Buscar Proveedores'
+        name='Buscar Clientes'
     ),
    
 
