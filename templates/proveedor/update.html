@@ -5,7 +5,7 @@
 
 <h1 class="text-center display-4 font-weight-bold font-italic">Modificar Producto</h1>
 <div class="row mt-3 justify-content-center">
-    <div class="card" style="width: 500px;">
+    <div class="card" style="width: 500px;background-color: azure">
         <div class="card-body"> 
     <form method="POST">{% csrf_token %}    <!-- Permite prevenir falsificaciónes de solicitudes entre sitios.-->
                 
@@ -13,7 +13,7 @@
 <form method="POST">{% csrf_token %} 
     {{form.as_p}}
     
-    <button class="btn btn-danger row col-10 ml-4 "type="submit" value="Modificar" data-toggle="tooltip" data-placement="right" title="Modificar">Modificar</button>
+    <button class="row col-5 ml-4 justify-content-center border-radius"type="submit" value="Modificar" data-toggle="tooltip" data-placement="right" title="Modificar">Modificar</button>
 </form>
 
 

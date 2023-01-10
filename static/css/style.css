@@ -1,5 +1,5 @@
 body {
-    background-color: aqua;
+    background-color: pink;
 
 }
 .carousel-inner img {
@@ -10,12 +10,13 @@ body {
     display: grid;
     border: 5px solid black;
     grid-template-columns: auto auto auto auto;
-    
+   
 }
 .listaproductos {
     display: grid;
     border: 5px solid black;
     grid-template-columns: auto auto auto auto auto;
+   
 }
 .listaproveedores {
     display: grid;

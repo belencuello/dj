@@ -43,13 +43,13 @@ class BuscarProveedorListView(ListView):
     context_object_name = "proveedores"
 
 #para realizar una consulta segun criterio de busqueda usamos metodo get queryset
-def get_queryset(self):
-    palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
     #lista que muestra
-    lista = Proveedor.objects.filter(
-        nombre__icontains = palabra_clave
-    )#los objetos del modelo cliente los voy a filtar con algun criterio
-    return lista
+        lista = Proveedor.objects.filter(
+            nombre__icontains = palabra_clave
+            )#los objetos del modelo cliente los voy a filtar con algun criterio
+        return lista
 
 
 class ProveedorDetailView(DetailView):
@@ -86,6 +86,7 @@ class ProveedorUpdateView(UpdateView):
 class ProveedorDeleteView(DeleteView):#se usa para borrar registros
     model = Proveedor
     template_name = "proveedor/delete.html"
+    context_object_name= 'delete'
     success_url = reverse_lazy('proveedor_app:Lista de Proveedores')#funcion q dirige la URL a onde se le diga
 
 

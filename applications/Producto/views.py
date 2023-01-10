@@ -63,7 +63,7 @@ class ProductoCreateView(CreateView):
     #redefinimos una funcion form_valid que se va a ejecutar una vez que se determine que el formulario sea valido o sea que todos sus campos esten completados
     def form_valid(self, form):
         prod= form.save(commit=False)#guarda en esta variable pero no en la BD
-        prod = prod.tipo + '' + prod.marcaprod#AUTOMATICAMENTE SE GENERA EL NOMBRE COMPLETO EN BASE AL APELLIDO Y NOMBRE QUE INGRESE 
+        #prod = prod.tipo + '' + prod.marcaprod#AUTOMATICAMENTE SE GENERA EL NOMBRE COMPLETO EN BASE 
         prod.save()#guarda en la BD
         return super(ProductoCreateView, self).form_valid(form)
 
@@ -75,7 +75,8 @@ class ProductoUpdateView(UpdateView):
     success_url = reverse_lazy('producto_app:Lista de Productos')
 
     def form_valid(self, form):
-        emp = form.save()#guarda en esta variable pero no en la BD
+        prod = form.save()#guarda en esta variable pero no en la BD
+        prod.save()
         return super(ProductoUpdateView, self).form_valid(form)
 
 
@@ -83,6 +84,7 @@ class ProductoUpdateView(UpdateView):
 class ProductoDeleteView(DeleteView):#se usa para borrar registros
     model = Producto
     template_name = "producto/delete.html"
+    context_object_name= 'delete'
     success_url = reverse_lazy('producto_app:Lista de Productos')#funcion q dirige la URL a onde se le diga
 
 
