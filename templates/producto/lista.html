@@ -16,21 +16,22 @@
           <p>{{producto.identificador}}</p>
           <p>{{producto.nombre}}</p>
           
-
           {% for i in producto.marcaProd.all%}
-            <p>{{i.marcaProd}}</p>
+            <p>{{i.marca}}</p>
           {% endfor %}
+
           <p>{{producto.proveedor.nombre}}</p>
-          
-          
           <p>
              <a href="{% url 'producto_app:Detalle del Producto' producto.identificador%}">Ver-</a>
              <a href="{% url 'producto_app:Modificar Producto' producto.identificador%}">Modificar-</a>
              <a href="{% url 'producto_app:Baja de Producto' producto.identificador%}">Eliminar</a>
-
           </p> 
      {% endfor %}
+
 </div>
+
+
+
 <table class="table table-dark table-hover table-wrapper-scroll-y">
         <thead>
             <tr>
@@ -38,6 +39,7 @@
                 <th>Nombre</th>
                 <th>Marca</th>
                 <th>Proveedor</th>
+                <th>Acciones</th>
                 
               
             </tr>
@@ -51,22 +53,24 @@
                 <td>{{producto.nombre}}</td>
 
                 {% for item in producto.marcaProd.all %}
-                    <td>{{item.marcaProd}}</td>
+                    <td>{{item.marca}}</td>
                 {% endfor %}
                     
                 <td>{{producto.proveedor.nombre}}</td>
+                <td>
+                    <a href="{% url 'producto_app:Detalle del Producto' producto.identificador%}">Ver-</a>
+                    <a href="{% url 'producto_app:Modificar Producto' producto.identificador%}">Modificar-</a>
+                    <a href="{% url 'producto_app:Baja de Producto' producto.identificador%}">Eliminar</a>
+                </td> 
                 
-</tr>
+            </tr>
             {% endfor %}
+
         
-        </tbody>
+</tbody>
         
         
-  </table>
+</table>
 
 {% endblock content %}
-
-
-
-
 

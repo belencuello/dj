@@ -22,10 +22,10 @@
     <form method="POST">{% csrf_token %}    <!-- Permite prevenir falsificaciónes de solicitudes entre sitios.-->
                 <p>Id: {{delete.identificador}}</p>
                 <p>Tipo: {{delete.tipo}}</p>
-                <p>Marca: {{delete.marcaProd}}</p>
+                <p>Marca: {{delete.marca}}</p>
                 <button class="btn btn-danger row col-10 ml-4"style="width: 40%  ;margin-top: 20px; margin-left: 100px;"type="submit" value="Borrar" data-toggle="tooltip" data-placement="right" title="Borrar">BORRAR</button>
     </form>
-            
+           
     </div>
 </div> 
 {% endblock content %}
