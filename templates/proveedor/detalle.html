@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-<h1 class="text-center display-4 font-weight-bold font-italic">Detalle del Proveedor</h1>
+<h1 class="text-center display-4 font-weight-bold font-italic" style="margin-top: 20px">Detalle del Proveedor</h1>
 
 <div class="row mt-3 justify-content-center">
-    <div class="card" style="width: 400px; background-color: azure">
+    <div class="card" style="width: 400px; background-color: azure; margin-top: 20px">
         <div class="card-body"> 
-            <h4 class="text-center display-4 font-weight-bold font-italic">Datos</h4>
+            <h2 class="text-center display-4 font-weight-bold font-italic">Datos</h2>
 
     {% if detalle.avatar %}
         <img src="{{detalle.avatar.url}}" >
     {% else %}
-         <img src=" {% static 'img/usuario.jpeg' %} " style=" width: 100px; border-radius: 100%; justify-content:center">
+         <img src=" {% static 'img/usuario.jpeg' %} " style=" width: 100px; border-radius: 100%; margin-left: 120px; margin-bottom: 20px; margin-top: 20px;">
            
     {% endif %}
 

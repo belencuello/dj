@@ -16,7 +16,7 @@ body {
     display: grid;
     border: 5px solid black;
     grid-template-columns: auto auto auto auto auto;
-   
+  
 }
 .listaproveedores {
     display: grid;
