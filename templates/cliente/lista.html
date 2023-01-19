@@ -4,10 +4,13 @@
 {% load static %}
 
 {% block content %}
+     
+
 <h1 class="text-center display-4 font-weight-bold font-italic"style="margin-top: 20px;">Lista de Clientes</h1>
 
 
-<div class = "listaclientes" style="margin-top: 40px;">
+<div class = "listaclientes" style="margin-top: 80px;background-color: beige;margin-block-end: 155px;">
+
      <h2><strong>Apellidos</strong></h2>
      <h2><strong>Nombres</strong></h2>
      <h2><strong>Nombre_Completo</strong></h2>
@@ -27,13 +30,13 @@
 
 </div>
 <div>
-{% if is_paginated %}
+     {% if is_paginated %}
        {% if page_obj.has_previus %}
            <a href="?page={{page_obj.previus_page_number}}">Atras</a>
        {% endif %} 
    
        {%for pagina in paginator.page_range %}
-            {% ifequal pagina pge_obj.number %}
+            {% ifequal pagina page_obj.number %}
               {{ pagina }} 
             {% else %}
              <a href="?page={{pagina}}">{{ pagina }}</a>></a></li>
@@ -45,7 +48,7 @@
            <a href="?page={{page_obj.next_page_next}}">Siguiente</a>></a>
        {% endif %}
 
-{% endif %}
+     {% endif %}
 
 </div>
 {% endblock content %}

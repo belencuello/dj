@@ -12,5 +12,6 @@ class ProductoForm(forms.ModelForm):
         fields = ('identificador',
                   'nombre',  
                   'tipo',
+                  'proveedor',
                   'marcaProd',
                   )#campos para crear a los productos

@@ -3,10 +3,10 @@
 
 
 {% block content %}
-<h1 class="text-center display-4 font-weight-bold font-italic"style="margin-top: 20px">Modificar Cliente</h1>
+<h1 class="text-center display-4 font-weight-bold font-italic font-color: text-white"style="margin-top: 40px">Modificar Cliente</h1>
 
 <div class="row mt-3 justify-content-center">
-    <div class="card" style="width: 500px;margin-top: 20px; background-color: azure;">
+    <div class="card" style="width: 500px;margin-top: 40px; background-color: azure;">
         <div class="card-body"> 
     <form method="POST">{% csrf_token %} 
         {{form.as_p}}

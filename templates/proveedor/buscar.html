@@ -1,22 +1,29 @@
 {% block content %}
 {% load static %}
-<h1 class="text-center display-4 font-weight-bold font-italic">Buscar Proveedor</h1>
-<form method="GET">
-    <input type="text" placerholder = 'Nombres' identificdor = "kword" name="kword">
-    <input type="button" value="Buscar">
+<h1 class="text-center display-4 font-weight-bold font-italic"style="margin-left: 700px;margin-top: 40px ;" >Buscar Proveedor</h1>
 
-</form>
+<div class="row mt-3 justify-content-center">
+    <div class="card" style="width: 500px;background-color: azure;margin-top: 40px;margin-left: 600px;">
+        <div class="card-body">
+            <form method="GET" style="hei: 30px;">
+                <input type="text" placerholder = 'Nombres' identificdor = "kword" name="kword">
+                 <input type="button" value="Buscar">
 
-<p>Lista de Proveedores</p>
 
-<ul>
-    
-    {% for proveedor in proveedores  %}
-    <li>{{proveedor.nombre}},{{proveedor.rubro}}</li>
+
+                <h2>Lista de Proveedores</h2>
+
+                <ul style="font-size: 26px;margin-block-end: 150px" >
+   
+                     {% for proveedor in proveedores  %}
+                        <li>{{proveedor.nombre}},{{proveedor.rubro}}</li>
         
-    {% endfor %}
-<ul>
- 
+                     {% endfor %}
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
    
     
 {% endblock content %}

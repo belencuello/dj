@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<h1 class="text-center display-4 font-weight-bold font-italic"style="margin-top: 20px">Borrar Productos</h1>
+<h1 class="text-center display-4 font-weight-bold font-italic font-color: text-white"style="margin-top: 20px">Borrar Productos</h1>
 
 <div class="alert alert-warning">
     <div clas="row m-7 justify-content-center align-items-center">
@@ -14,18 +14,30 @@
     </div>
 </div>
 
-<h3 class="text-center display-6" style="margin-top: 20px">¿Desea borrar este producto?</h3>
+<h3 class="text-center display-6 font-color: text-white" style="margin-top: 40px">¿Desea borrar este producto?</h3>
 
 <div class="row mt-3 justify-content-center">
     <div class="card" style="width: 400px;background-color: azure; margin-top: 20px;">
         <div class="card-body"> 
     <form method="POST">{% csrf_token %}    <!-- Permite prevenir falsificaciónes de solicitudes entre sitios.-->
                 <p>Id: {{delete.identificador}}</p>
+                
+                <p>Nombre: {{delete.nombre}}</p>
                 <p>Tipo: {{delete.tipo}}</p>
                 <p>Marca: {{delete.marca}}</p>
+                
+
+                <div>
+                {% for producto in productos %}
+                    {% for i in producto.marcaProd.all%}
+                     <p>{{i.marca}}</p>
+                     {% endfor %}
+                 {% endfor %}
+                </div>
+
                 <button class="btn btn-danger row col-10 ml-4"style="width: 40%  ;margin-top: 20px; margin-left: 100px;"type="submit" value="Borrar" data-toggle="tooltip" data-placement="right" title="Borrar">BORRAR</button>
     </form>
-           
+          
     </div>
 </div> 
 {% endblock content %}

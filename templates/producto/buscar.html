@@ -1,23 +1,38 @@
 {% block content %}
 {% load static %}
 
+<h1 class="text-center display-4 font-weight-bold font-italic font-color: text-white" style="margin-left: 700px;margin-top: 40px ;" >Buscar Productos</h1>
 
-<form method="GET">
-    <input type="text" placerholder = 'Apellidos' id = "kword" name="kword">
-    <input type="button" value="Buscar">
+<div class="row mt-3 justify-content-center">
+    <div class="card" style="width: 500px;background-color: azure;margin-top: 40px;margin-left: 600px;">
+        <div class="card-body">
+            <form method="GET" style="margin-top: 50px;">
+                <input type="text" placerholder = 'Nombre' id = "kword" name="kword">
+                <input type="button" value="Buscar"style="margin-top: 40px;">
 
-</form>
-
-<p>Lista de Productos</p>
-
-<ul>
-    
-    {% for producto in productos  %}
-    <li>{{producto.tipo}},{{producto.marcaProd}}</li>
         
-    {% endfor %}
-<ul>
- 
+
+                 <p>Lista de Productos</p>
+
+                 <ul style="font-size: 26px;margin-block-end: 150px" >
+    
+                   {% for producto in productos  %}
+                         <li>{{producto.nombre}},{{i.marca}}</li>
+                    {% for i in producto.marcaProd.all%}
+                        <p>{{i.marca}}</p>
+                     {% endfor %}
+                   {% endfor %}
+    
+                 </ul>
+            </form> 
+        </div>
+    </div>
+</div>
+
+          
+          
+          
+           
    
     
 {% endblock content %}
