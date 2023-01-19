@@ -1,20 +1,19 @@
 {% block content %}
 {% load static %}
+<div class="buscarproveedor" style="background-image: url(https://st3.depositphotos.com/1063437/19562/i/450/depositphotos_195622738-stock-photo-bottle-of-chivas-regal-12.jpg);background-size: cover;">
+    <h1 class="text-center display-4 font-weight-bold font-italic font-color: text-white" style="margin-top: 0px;margin-left: 350px; " >Buscar Productos</h1>
 
-<h1 class="text-center display-4 font-weight-bold font-italic font-color: text-white" style="margin-left: 700px;margin-top: 40px ;" >Buscar Productos</h1>
-
-<div class="row mt-3 justify-content-center">
-    <div class="card" style="width: 500px;background-color: azure;margin-top: 40px;margin-left: 600px;">
-        <div class="card-body">
+    <div class="row mt-3 justify-content-center">
+        <div class="card" style="width: 350px;background-color: azure;margin-top: 40px;margin-left: 300px; ">
+         <div class="card-body">
             <form method="GET" style="margin-top: 50px;">
-                <input type="text" placerholder = 'Nombre' id = "kword" name="kword">
-                <input type="button" value="Buscar"style="margin-top: 40px;">
-
+                <input type="text" placerholder = 'Nombre' id = "kword" name="kword" style="margin-top: 40px;margin-top:20px;height: 30px;margin-left: 60px;margin-block-end: 20px ">
+                <input type="button" value="Buscar">
         
 
-                 <p>Lista de Productos</p>
+                 <h2 class="text-center display-4" style="margin-left: 70px">Lista de Productos</h2>
 
-                 <ul style="font-size: 26px;margin-block-end: 150px" >
+                 <ul style="font-size: 20px;margin-block-end: 30px;margin-inline-end: 55px; ">
     
                    {% for producto in productos  %}
                          <li>{{producto.nombre}},{{i.marca}}</li>
@@ -25,10 +24,10 @@
     
                  </ul>
             </form> 
+         </div>
         </div>
     </div>
 </div>
-
           
           
           

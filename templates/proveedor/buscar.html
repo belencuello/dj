@@ -1,19 +1,21 @@
 {% block content %}
 {% load static %}
-<h1 class="text-center display-4 font-weight-bold font-italic"style="margin-left: 700px;margin-top: 40px ;" >Buscar Proveedor</h1>
+<div class="buscarproveedor" style="background-image: url(https://st3.depositphotos.com/1063437/19562/i/450/depositphotos_195622738-stock-photo-bottle-of-chivas-regal-12.jpg);background-size: cover;">
+   
+    <h1 class="text-center display-4 font-weight-bold font-italic"style="margin-left: 400px" >Buscar Proveedor</h1>
 
-<div class="row mt-3 justify-content-center">
-    <div class="card" style="width: 500px;background-color: azure;margin-top: 40px;margin-left: 600px;">
-        <div class="card-body">
-            <form method="GET" style="hei: 30px;">
-                <input type="text" placerholder = 'Nombres' identificdor = "kword" name="kword">
+
+ <div class="row mt-3 justify-content-center">
+    <div class="card" style="width: 500px;background-color: azure;margin-top: 40px;margin-left: 300px;margin-block-end: 55px; ">
+            <form method="GET" style="margin-block-end: 150px;">
+                <input type="text" placerholder = 'Nombres' identificdor = "kword" name="kword" style="margin-top:20px;height: 30px;margin-left: 100px ">
                  <input type="button" value="Buscar">
 
 
 
                 <h2>Lista de Proveedores</h2>
 
-                <ul style="font-size: 26px;margin-block-end: 150px" >
+                <ul style="font-size: 26px;margin-block-end: 450px" >
    
                      {% for proveedor in proveedores  %}
                         <li>{{proveedor.nombre}},{{proveedor.rubro}}</li>
@@ -23,7 +25,7 @@
             </form>
         </div>
     </div>
-</div>
-   
+ </div>
+</div>   
     
 {% endblock content %}
