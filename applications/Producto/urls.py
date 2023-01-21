@@ -9,7 +9,7 @@ urlpatterns = [
        views.Inicio.as_view(), #esta es la vista que acabamos de crear en views.py	
        name='Pagina inicial'   #nombre de la url
     ),
-    
+   
     path(
         'producto/lista/',
         views.ProductoListView.as_view(),

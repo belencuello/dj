@@ -38,7 +38,7 @@ class ClienteListView(ListView):#esta vista hace una consulta a la BS y devuelve
 class BuscarClienteListView(ListView):
     model = Cliente
     template_name = "cliente/buscar.html"
-    ordering = "apellidos"
+    ordering = "nombres"
     context_object_name = "clientes"
 
 #para realizar una consulta segun criterio de busqueda usamos metodo get queryset
@@ -46,7 +46,7 @@ class BuscarClienteListView(ListView):
         palabra_clave = self.request.GET.get('kword','') #aca le estoy piediendo que del metodo get me obtenga algo cuyo nombre sea segun parametro que va a ser el nombre del campo() #GET es cuando quiero traer cierta ingo del servidor POST cuando quiero enviar info del servidor
         #lista que muestra
         lista = Cliente.objects.filter(
-            apellidos__icontains = palabra_clave
+            nombres__icontains = palabra_clave
         )#los objetos del modelo cliente los voy a filtar con algun criterio
         return lista
 
@@ -94,5 +94,4 @@ class ClienteListApiView(ListAPIView):
 
     serializer_class = ClienteSerializer
 
-    def get_queryset(self):
-        return Cliente.objects.all()
+    

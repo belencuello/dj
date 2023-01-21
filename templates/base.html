@@ -16,42 +16,50 @@
 
 </head>
 <body>  
-        <div class="" style="background-image: url('https://st3.depositphotos.com/1063437/12723/i/950/depositphotos_127230490-stock-photo-bottle-of-chivas-regal-12.jpg');
-    background-repeat: repeat;
-    background-size: cover;">
-         
         </div>
 
           <nav class="navbar navbar-expand-sm bg-primary text-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/inicial">ERP</a>
+            <div class="container-fluid">
+            <a class="navbar-brand" href="/inicial">Chiva's</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+           
+                <!--logo en la barra de nav-->
+            <nav class="navbar-brand">
+             <a class="navbar-brand" href="">
+                 <img src="{% static 'img/logoChivas.jpg' %}" width="60" height="50" style="border-radius: 50px;"  class="d-inline-block align-top" alt="">
+             </a>
+            </nav>
+           
+            <!---pongo barra de navegacion a la derecha -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item ">
-                <a class="nav-link active" aria-current="page" href="producto/lista">Productos</a>
+                    <a class="nav-link active" aria-current="page" href=/home/acuello/p1django/proyecto/Despensa/templates/producto/lista.html>Productos</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="cliente/lista">Clientes</a>
+                    <a class="nav-link active" aria-current="page" href="/proyecto/Despensa/templates/cliente/lista.html">Clientes</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="proveedor/lista">Proveedores</a>
+                    <a class="nav-link active" aria-current="page" href="/proyecto/Despensa/templates/proveedor/lista.html">Proveedores</a>
                 </li>
            
             </ul>
+            <!--barra buscar-->
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="text" placeholder="" aria-label="Search">
                 <button class="btn btn-outline-dark" type="submit">Buscar</button>
             </form>
             </div>
+            </div>
+          </nav>
         </div>
         
-        </nav>
+        
     {% block content %}
        
     {% endblock content %}
